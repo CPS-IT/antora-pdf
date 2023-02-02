@@ -11,15 +11,19 @@ projects with [Antora][antora]
 * Docker
 
 ## Usage
-1. Reference the Docker image in your CI/CD pipeline e.g.:
+    
+1. Run `antora` in a container on your machine:
+    ```yaml
+     docker run -v `pwd`:/antora -it cpsit/antora-pdf:0.1.0 antora --fetch --to-dir public antora-playbook.yml 
+    ```
 
+2. Reference the Docker image in your CI/CD pipeline e.g.:
     ```yaml
     image: cpsit/antora-pdf:stable
     ```
-    
-    Include your `antora-playbook.yml` and optionally `antora-assembler.yml` and `pdf-theme.yml` files. 
-    
-2. Run _your_ `antora` command in your pipeline, e.g.:
+    Include your `antora-playbook.yml` and optionally `antora-assembler.yml` and `pdf-theme.yml` files.
+
+3. Run `antora` command in your pipeline, e.g.:
     ```yaml
     script: 
       - npx antora --fetch --cache-dir .cache/antora --attribute page-pagination= --to-dir public antora-playbook.yml
