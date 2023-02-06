@@ -1,0 +1,8 @@
+{
+  "name": "dena-developer-guide",
+  "description": "antora build package for dena developer's guide",
+  "dependencies": {
+    "antora": "~3.1",
+    "@antora/pdf-extension": "^1.0.0-alpha.6"
+  }
+}
